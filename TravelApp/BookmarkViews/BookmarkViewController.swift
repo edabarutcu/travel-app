@@ -21,6 +21,7 @@ class BookmarkViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         startApp()
     }
+    
     func setupUi(){
         let nib = UINib(nibName: "bookmarkTableViewCell", bundle: nil)
         self.bookmarkTableView.register(nib, forCellReuseIdentifier:  "bookmarkTableViewCell")
@@ -37,6 +38,7 @@ class BookmarkViewController: UIViewController {
     }
     
 }
+
 extension BookmarkViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.trips.value?.count ?? 0
@@ -66,7 +68,5 @@ extension BookmarkViewController: UITableViewDataSource,UITableViewDelegate{
         destinationVC.selectedHotel = indexPath.row
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
-    
-    
 }
 

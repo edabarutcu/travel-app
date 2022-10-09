@@ -10,7 +10,6 @@ import SwiftyJSON
 class BookMarksVM:ObservableObject{
     
     var selectedHotelIndex : Int = 0
-    
     var trips = Binder<[CoreDataModel]>()
     
     func setAssetStatus (){
@@ -18,7 +17,7 @@ class BookMarksVM:ObservableObject{
     }
     
     func findSelectedNumberOfItem (index:Int){
-      //  print(Helper.hotelList)
+        //  print(Helper.hotelList)
         var indexnum = 0
         for item in Helper.hotelList!{
             if item.code == trips.value?[index].code{
@@ -29,5 +28,4 @@ class BookMarksVM:ObservableObject{
             
         }
     }
-    
 }

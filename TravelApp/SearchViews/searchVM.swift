@@ -6,13 +6,15 @@
 //
 
 import Foundation
+
 class SearchVM {
+    
     let cityList = Helper.cityList
     var filteredFlights = Binder<[FlightList]>()
     var filteredHotels = Binder<[Hotel]>()
     var selectedItemNumber:Int = 0
     
-// FIND SEARCH FLIGHT LIST
+    // FIND SEARCH FLIGHT LIST
     func searchList (text:String) {
         var containCities : [FlightList] = []
         var filteredItem : [FlightList]?
@@ -40,9 +42,7 @@ class SearchVM {
             }
         }
     }
-    
     // FIND SELECTED HOTEL ARRAY INDEX IN ALL HOTEL LIST
-
     func findHotelIndexNumber (index:Int){
         selectedItemNumber = 0
         Helper.hotelList?.append((filteredHotels.value?[index])!)
@@ -55,9 +55,7 @@ class SearchVM {
             }
         }
     }
-    
     // FIND SEARCH HOTEL LIST
-
     func getHotelList (text:String){
         for item in cityList{
             if item[0].contains(text){

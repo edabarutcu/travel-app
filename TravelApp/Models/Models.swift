@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+
 // MARK: - ContentDetails
 struct ContentDetails: Codable {
     let from, to: Int

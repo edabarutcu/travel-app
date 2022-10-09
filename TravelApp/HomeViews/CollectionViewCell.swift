@@ -19,5 +19,4 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 10
         // Initialization code
     }
-
 }

@@ -25,12 +25,10 @@ class ViewControllerViewModel:ObservableObject{
         NetworkUtils.getHotels(cityCode: "ABC", number: 50, callBackFunc: callback)
     }
     
-    func callback (res:[Hotel]) {
+    func callback (res:[Hotel]) {
         
         Helper.hotelList = res
     }
-    
-    
 }
 
 

@@ -7,14 +7,13 @@
 
 import UIKit
 import CoreData
+
 class DescriptionViewController: UIViewController {
 
     @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var addButton: UIButton!
-    
     @IBOutlet weak var backButton: UIButton!
     var openType : OpenTypes?
     var selectedHotel:Int?
