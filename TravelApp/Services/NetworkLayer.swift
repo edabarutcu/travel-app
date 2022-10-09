@@ -16,8 +16,8 @@ class NetworkUtils{
     static let contentUri = "/hotel-content-api/1.0"
     static let apiKey = "8fc1a187f91287e2cf4da8d06cc83f2a"
     static let secret = "8a286ab870"
-    static let upcomingMovieUrl = "{version}/hotels"
-    static let nowPlayingMovieUrl = "now_playing"
+    static let upcomingHotelUrl = "{version}/hotels"
+    static let nowPlayingHotelUrl = "now_playing"
     static let mediumImageUrl = "https://photos.hotelbeds.com/giata/original/"
     
     
@@ -33,7 +33,6 @@ class NetworkUtils{
                 var hotelsArray : [Hotel] = []
                 for item in response.hotels {
                     hotelsArray.append(item)
-                    print(item.name.content)
                 }
                 callBackFunc(hotelsArray)
             }
