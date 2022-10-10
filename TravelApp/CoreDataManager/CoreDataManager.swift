@@ -70,12 +70,10 @@ class CoreDataManager{
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "FavoriteModel")
         do {
             objects = try context.fetch(fetchReq)
-            print(objects)
             for trips in objects{
                 
                 let t = CoreDataModel(code: trips.value(forKey: "code") as! Int, name: trips.value(forKey: "name") as! String, hotelDescription: trips.value(forKey: "hotelDescription") as! String, countryCode: trips.value(forKey: "countryCode") as! String, address: trips.value(forKey: "address") as! String, city: trips.value(forKey: "city") as! String, images: trips.value(forKey: "images") as! String)
                 products.append(t)
-                print(products)
             }
         }catch let error as NSError{
             print(error)

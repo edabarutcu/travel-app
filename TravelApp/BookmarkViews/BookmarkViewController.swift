@@ -44,20 +44,22 @@ extension BookmarkViewController: UITableViewDataSource,UITableViewDelegate{
         return viewModel.trips.value?.count ?? 0
         
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookmarkTableViewCell", for: indexPath) as! BookmarkTableViewCell
-        tableView.separatorStyle = .none
-        
-        cell.descriptionlabel.text = viewModel.trips.value?[indexPath.row].hotelDescription
-        cell.backImageView.sd_setImage(with: URL(string: NetworkUtils.mediumImageUrl+(viewModel.trips.value?[indexPath.row].images ?? "")))
-        cell.titleLabel.text = viewModel.trips.value?[indexPath.row].name
-        
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BookmarkTableViewCell", for: indexPath) as! BookmarkTableViewCell
+            tableView.separatorStyle = .none
+
+            cell.descriptionlabel.text = viewModel.trips.value?[indexPath.row].hotelDescription
+            if viewModel.trips.value?[indexPath.row].images != ""{
+            cell.backImageView.sd_setImage(with: URL(string: NetworkUtils.mediumImageUrl+(viewModel.trips.value?[indexPath.row].images ?? "")))
+            }else{
+                cell.backImageView.image = UIImage(named: "flightBack")
+            }
+            cell.titleLabel.text = viewModel.trips.value?[indexPath.row].name
+
+            cell.selectionStyle = .none
+
+            return cell
+        }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }

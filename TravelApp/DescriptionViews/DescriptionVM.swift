@@ -16,8 +16,9 @@ class DescriptionVM:ObservableObject{
     var buttonText = Binder<String>()
     var flightDescription = Binder<String>()
     var flightTitle = Binder<String>()
+    var imageUrl = Binder<String>()
     
-// STATUS ARRANGE FOR ALL SEGMENTS
+    // STATUS ARRANGE FOR ALL SEGMENTS
     func setAssetStatus (){
         trips = CoreDataManager.shared.getAllTrips()
         if openType == .hotel{
@@ -48,11 +49,11 @@ class DescriptionVM:ObservableObject{
             isFavorite = true
             flightDescription.value = trips?[selectedHotelIndex!].hotelDescription ?? ""
             flightTitle.value = trips?[selectedHotelIndex!].name ?? ""
-            
+            imageUrl.value = trips?[selectedHotelIndex!].images ?? ""
         }
     }
     
-// SAVE OR DELETE ITEMS
+    // SAVE OR DELETE ITEMS
     func tappedAddFavorite(){
         if isFavorite == false{
             let cellVM : CoreDataModel?
@@ -61,14 +62,14 @@ class DescriptionVM:ObservableObject{
             }else{
                 cellVM = CoreDataModel(code: Helper.flightList[selectedHotelIndex!].code, name: Helper.flightList[selectedHotelIndex!].arrival, hotelDescription: flightDescription.value ?? "", countryCode: "", address: "" , city: "", images: "")
             }
-            buttonText.value = "Remove Bookmarks"
+            buttonText.value = "Delete Bookmarks"
             
             CoreDataManager.shared.insert(trip: cellVM!)
             isFavorite=true
         }else{
             CoreDataManager.shared.deleteCoreData()
             let newDatas = trips?.filter({ $0.name != flightTitle.value})
-           // print(newDatas?.count)
+            print(newDatas?.count)
             if newDatas?.count != 0{
                 for item in newDatas!{
                     CoreDataManager.shared.insert(trip: item)
@@ -78,13 +79,11 @@ class DescriptionVM:ObservableObject{
             buttonText.value = "Add Bookmarks"
             isFavorite=false
             
-            
         }}
- 
-// SET FLIGHT DESCRIPTION  WITH FLIGHT OBJECT
+    
+    // SET FLIGHT DESCRIPTION  WITH FLIGHT OBJECT
     func arrangeFlight () {
         flightTitle.value = Helper.flightList[selectedHotelIndex!].arrival
         flightDescription.value = "Departure Airport : \(Helper.flightList[selectedHotelIndex!].departure) \nArrival Aiport : \(Helper.flightList[selectedHotelIndex!].arrival) \nDeparture Date : \(Helper.flightList[selectedHotelIndex!].departure_date) \nDeparture Time : \(Helper.flightList[selectedHotelIndex!].departure_time) \nArrival Date : \(Helper.flightList[selectedHotelIndex!].arrival_date) \nDeparture Time : \(Helper.flightList[selectedHotelIndex!].arrival_time)"
     }
 }
-

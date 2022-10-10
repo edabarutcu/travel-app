@@ -183,8 +183,7 @@
 		B794D31D28E8CB47008F1583 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
-				B794D31E28E8CB47008F1583 /* AppDelegate.swift */,
-				B794D32028E8CB47008F1583 /* SceneDelegate.swift */,
+				D20D1EDF28F4975100153669 /* Supporting Files */,
 				B739A34528F3363800F4B44C /* Services */,
 				B739A34628F3364700F4B44C /* Utils */,
 				B75E53CE28EB0522001C644F /* Models */,
@@ -193,11 +192,11 @@
 				B7D813DE28E98E810012B27B /* DetailViews */,
 				B7D813DD28E98E1F0012B27B /* BookmarkViews */,
 				B794D35D28E8D7BB008F1583 /* HomeViews */,
-				B794D32428E8CB47008F1583 /* Main.storyboard */,
+				D20D1EE028F497DD00153669 /* Resources */,
 				B794D35128E8CBC4008F1583 /* CoreDataManager */,
-				B794D32A28E8CB49008F1583 /* Assets.xcassets */,
 				B794D35F28E8D821008F1583 /* FontsFamily */,
 				B794D32C28E8CB49008F1583 /* LaunchScreen.storyboard */,
+				B794D32428E8CB47008F1583 /* Main.storyboard */,
 				B794D32F28E8CB49008F1583 /* Info.plist */,
 			);
 			path = TravelApp;
@@ -298,6 +297,23 @@
 				7C54ACEC82FFEDEFEEA439B9 /* Pods-TravelAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D20D1EDF28F4975100153669 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B794D31E28E8CB47008F1583 /* AppDelegate.swift */,
+				B794D32028E8CB47008F1583 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D20D1EE028F497DD00153669 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B794D32A28E8CB49008F1583 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F46C565278A813854E18BBC5 /* Frameworks */ = {

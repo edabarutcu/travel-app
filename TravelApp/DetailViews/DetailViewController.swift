@@ -64,7 +64,6 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if openType == .hotel{
-           // print(viewModel.hotelsArray.value?.count)
             return viewModel.hotelsArray.value?.count ?? 0
         }else{
             if viewModel.flightArray.value?.count != 0{
@@ -100,7 +99,7 @@ extension DetailViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "DescriptionViewController") as! DescriptionViewController
         destinationVC.selectedHotel = indexPath.row
-      //  print(openType?.hashValue)
+        print(openType?.hashValue)
         destinationVC.openType = openType
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
