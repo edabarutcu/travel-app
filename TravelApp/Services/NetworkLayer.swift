@@ -14,8 +14,8 @@ class NetworkUtils{
     
     static let baseUrl = "https://api.test.hotelbeds.com"
     static let contentUri = "/hotel-content-api/1.0"
-    static let apiKey = "8fc1a187f91287e2cf4da8d06cc83f2a"
-    static let secret = "8a286ab870"
+    static let apiKey = "4782c4caff0ca4813bbef375fbcbc48b"
+    static let secret = "02e05682b2"
     static let upcomingHotelUrl = "{version}/hotels"
     static let nowPlayingHotelUrl = "now_playing"
     static let mediumImageUrl = "https://photos.hotelbeds.com/giata/original/"

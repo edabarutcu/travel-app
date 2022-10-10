@@ -25,7 +25,7 @@ class DescriptionVM:ObservableObject{
             
             if trips?.filter({ $0.code == Helper.hotelList![selectedHotelIndex!].code}).count == 1{
                 isFavorite = true
-                buttonText.value = "Remove From Bookmarks"
+                buttonText.value = "Remove Bookmarks"
                 
             }else{
                 isFavorite = false
@@ -36,7 +36,7 @@ class DescriptionVM:ObservableObject{
                 isFavorite = true
                 flightDescription.value = trips?[0].hotelDescription ?? ""
                 flightTitle.value = trips?[0].name ?? ""
-                buttonText.value = "Remove From Bookmarks"
+                buttonText.value = "Remove Bookmarks"
             }else{
                 arrangeFlight()
                 isFavorite = false
@@ -44,7 +44,7 @@ class DescriptionVM:ObservableObject{
             }
         }else{
             
-            buttonText.value = "Remove From Bookmarks"
+            buttonText.value = "Remove Bookmarks"
             isFavorite = true
             flightDescription.value = trips?[selectedHotelIndex!].hotelDescription ?? ""
             flightTitle.value = trips?[selectedHotelIndex!].name ?? ""

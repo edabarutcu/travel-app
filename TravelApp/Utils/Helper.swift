@@ -57,10 +57,10 @@ extension UIView{
             activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
             activityIndicator.center = self.center
             activityIndicator.hidesWhenStopped = true
-            activityIndicator.style = .gray
+            activityIndicator.style = .medium
             activityIndicator.color = .white
             activityIndicator.startAnimating()
-            activityIndicator.style = .whiteLarge
+            activityIndicator.style = .large
             self.isUserInteractionEnabled = false
             backgroundView.addSubview(activityIndicator)
             if let cwindow = currentWindow {

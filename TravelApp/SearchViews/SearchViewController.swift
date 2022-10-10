@@ -66,7 +66,6 @@ class SearchViewController: UIViewController {
             
         })
         
-        
         viewModel.filteredHotels.bind(observer: { array in
             self.view.activityStopAnimating()
             self.searchTableView.reloadData()
@@ -81,28 +80,28 @@ class SearchViewController: UIViewController {
     }
     
     @objc func searchTextFieldChanged(_ textField: UITextField) {
-            if textField.text!.count > 2 {
-                viewModel.filteredFlights.value = []
-                viewModel.filteredHotels.value = []
-                view.activityStartAnimating()
-                if openType == .flight{
-                    viewModel.searchList(text: textField.text ?? "")
-                }else{
-                    viewModel.getHotelList(text: textField.text ?? "")
-                }
-                if viewModel.filteredHotels.value?.count ?? 0 < 1 && viewModel.filteredFlights.value?.count ?? 0 < 1{
+        if textField.text!.count > 2 {
+            viewModel.filteredFlights.value = []
+            viewModel.filteredHotels.value = []
+            view.activityStartAnimating()
+            if openType == .flight{
+                viewModel.searchList(text: textField.text ?? "")
+            }else{
+                viewModel.getHotelList(text: textField.text ?? "")
+            }
+            if viewModel.filteredHotels.value?.count ?? 0 < 1 && viewModel.filteredFlights.value?.count ?? 0 < 1{
                 DispatchQueue.main.asyncAfter(deadline: .now()+4) {
                     self.view.activityStopAnimating()
                     self.noDataView.isHidden = false
                     self.searchTableView.isHidden = true
                 }
-                }
-            }else{
-                viewModel.filteredFlights.value = []
-                viewModel.filteredHotels.value = []
             }
+        }else{
+            viewModel.filteredFlights.value = []
+            viewModel.filteredHotels.value = []
         }
     }
+}
 
 extension SearchViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

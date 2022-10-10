@@ -16,11 +16,8 @@ class DetailViewController: UIViewController {
     let viewModel = DetailViewVM()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUi()
         startApp()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

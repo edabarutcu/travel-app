@@ -17,7 +17,6 @@ class DetailViewVM:ObservableObject{
 
     
     func startApp (){
-        
         flightArray.value = Helper.flightList
         hotelsArray.value = Helper.hotelList
     }
