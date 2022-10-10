@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+
 class BookMarksVM:ObservableObject{
     
     var selectedHotelIndex : Int = 0
