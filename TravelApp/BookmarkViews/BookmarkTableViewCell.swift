@@ -1,5 +1,5 @@
 //
-//  bookmarkTableViewCell.swift
+//  BookmarkTableViewCell.swift
 //  TravelApp
 //
 //  Created by eda on 2.10.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class bookmarkTableViewCell: UITableViewCell {
+class BookmarkTableViewCell: UITableViewCell {
 
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

@@ -86,7 +86,5 @@ class DescriptionVM:ObservableObject{
         flightTitle.value = Helper.flightList[selectedHotelIndex!].arrival
         flightDescription.value = "Departure Airport : \(Helper.flightList[selectedHotelIndex!].departure) \nArrival Aiport : \(Helper.flightList[selectedHotelIndex!].arrival) \nDeparture Date : \(Helper.flightList[selectedHotelIndex!].departure_date) \nDeparture Time : \(Helper.flightList[selectedHotelIndex!].departure_time) \nArrival Date : \(Helper.flightList[selectedHotelIndex!].arrival_date) \nDeparture Time : \(Helper.flightList[selectedHotelIndex!].arrival_time)"
     }
-    
-    
 }
 

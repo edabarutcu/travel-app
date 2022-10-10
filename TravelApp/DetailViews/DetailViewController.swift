@@ -44,8 +44,8 @@ class DetailViewController: UIViewController {
         
         
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        let nib = UINib(nibName: "bookmarkTableViewCell", bundle: nil)
-        self.detailTableView.register(nib, forCellReuseIdentifier:  "bookmarkTableViewCell")
+        let nib = UINib(nibName: "BookmarkTableViewCell", bundle: nil)
+        self.detailTableView.register(nib, forCellReuseIdentifier:  "BookmarkTableViewCell")
     }
     func startApp (){
         viewModel.startApp()
@@ -76,7 +76,7 @@ extension DetailViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkTableViewCell", for: indexPath) as! bookmarkTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookmarkTableViewCell", for: indexPath) as! BookmarkTableViewCell
         tableView.separatorStyle = .none
         
         if openType == .hotel{

@@ -23,8 +23,8 @@ class BookmarkViewController: UIViewController {
     }
     
     func setupUi(){
-        let nib = UINib(nibName: "bookmarkTableViewCell", bundle: nil)
-        self.bookmarkTableView.register(nib, forCellReuseIdentifier:  "bookmarkTableViewCell")
+        let nib = UINib(nibName: "BookmarkTableViewCell", bundle: nil)
+        self.bookmarkTableView.register(nib, forCellReuseIdentifier:  "BookmarkTableViewCell")
         bookmarkTableView.delegate = self
         bookmarkTableView.dataSource = self
     }
@@ -46,7 +46,7 @@ extension BookmarkViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkTableViewCell", for: indexPath) as! bookmarkTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookmarkTableViewCell", for: indexPath) as! BookmarkTableViewCell
         tableView.separatorStyle = .none
         
         cell.descriptionlabel.text = viewModel.trips.value?[indexPath.row].hotelDescription

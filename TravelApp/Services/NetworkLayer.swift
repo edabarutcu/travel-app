@@ -14,8 +14,8 @@ class NetworkUtils{
     
     static let baseUrl = "https://api.test.hotelbeds.com"
     static let contentUri = "/hotel-content-api/1.0"
-    static let apiKey = "4782c4caff0ca4813bbef375fbcbc48b"
-    static let secret = "02e05682b2"
+    static let apiKey = "d846d8ebaa4155fe5b925710ce70c56e"
+    static let secret = "784f030230"
     static let upcomingHotelUrl = "{version}/hotels"
     static let nowPlayingHotelUrl = "now_playing"
     static let mediumImageUrl = "https://photos.hotelbeds.com/giata/original/"
@@ -43,7 +43,7 @@ class NetworkUtils{
         let inputString = apiKey + secret + String(timestamp)
         let inputData = Data(inputString.utf8)
         let hashed = SHA256.hash(data: inputData)
-      //  print(hashed.description.components(separatedBy: ":")[1])
+        print(hashed.description.components(separatedBy: ":")[1])
         
         return hashed.description.components(separatedBy: ":")[1]
     }
@@ -55,7 +55,6 @@ class NetworkUtils{
     
     static func getFlightList (airLines:String){
         guard let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=59a65803206f1f113d452b837525c0cf&flight_status=scheduled&limit=50&airline_iata=\(airLines)") else { return }
-        
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil else {

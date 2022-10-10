@@ -92,7 +92,6 @@ class CoreDataManager{
         do {
             try managedObjectContext.execute(deleteRequest)
         } catch let error as NSError {
-            // TODO: handle the error
         }
     }
 }

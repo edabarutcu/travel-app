@@ -26,8 +26,8 @@ class SearchViewController: UIViewController {
     }
     
     func setupUi(){
-        let nib = UINib(nibName: "bookmarkTableViewCell", bundle: nil)
-        self.searchTableView.register(nib, forCellReuseIdentifier:  "bookmarkTableViewCell")
+        let nib = UINib(nibName: "BookmarkTableViewCell", bundle: nil)
+        self.searchTableView.register(nib, forCellReuseIdentifier:  "BookmarkTableViewCell")
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTextField.addTarget(self, action: #selector(searchTextFieldChanged), for: .editingChanged)
@@ -113,7 +113,7 @@ extension SearchViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkTableViewCell", for: indexPath) as! bookmarkTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookmarkTableViewCell", for: indexPath) as! BookmarkTableViewCell
         tableView.separatorStyle = .none
         if openType == .flight{
             cell.titleLabel.text = viewModel.filteredFlights.value?[indexPath.row].arrival
