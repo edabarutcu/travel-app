@@ -2,7 +2,7 @@
 //  TravelAppUITests.swift
 //  TravelAppUITests
 //
-//  Created by Hasan onur Can on 1.10.2022.
+//  Created by eda on 1.10.2022.
 //
 
 import XCTest
