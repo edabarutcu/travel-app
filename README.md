@@ -54,8 +54,6 @@
         let inputString = apiKey + secret + String(timestamp)
         let inputData = Data(inputString.utf8)
         let hashed = SHA256.hash(data: inputData)
-        print(hashed.description.components(separatedBy: ":")[1])
-        
         return hashed.description.components(separatedBy: ":")[1]
     }
  ```
