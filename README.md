@@ -1,7 +1,16 @@
 # FMSS Bilişim iOS Swift Bootcamp - Final Project
 
-# Travel App
+# Travel App✈️🏖
 
+The travel guide application is the application where we can have information about the places to go. An application where we can add the trips we plan to go in the near future.
+
+## For Developers
+
+```
+git clone https://github.com/edabarutcu/travel-app.git
+cd TravelApp
+open TravelApp.xcworkspace
+```
 
 ## ScreenShot
 
